@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    
+    <style> 
+        .collapsible{ 
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            text-align: center;
+            background-color: #1d3557;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 20px;
+        }
+        
+        .active, .collapsible:hover {
+        background-color: #14213d;
+        }
+
+        .content {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #ade8f4;
+            color:#33475b;
+            font-weight: 700;
+            text-align: left;
+            font-size: 20px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="websiteStyle.css" />
+    
+    <body>
+        <h1>Welcome to my website!</h1>
+        <p>This is a WIP website I am creating to act as a better way to show my skills</p>
+
+        <button type = "button" class = "collapsible">Navigation Links!</button>
+        <div class = "content">
+            <a href="DevonBoldtAboutMe.html" target="_blank" rel="noopener noreferrer">Get to know me better!</a>
+            <br>
+            <a href="personalProjects.html" target="_blank" rel="noopener noreferrer">Look at my projects!</a>
+            <br>
+            <a href="personalProjects.html" target="_blank" rel="noopener noreferrer">My resume!</a>
+            <br>
+            <a href="https://github.com/DevonBoldt" target="_blank" rel="noopener noreferrer">My ithub!</a>
+        </div>
+
+        <div class="footer"><button onclick="darkMode()" class="block">Toggle Dark Mode</button></div>
+
+        <script>
+
+            // Dark Mode Code
+            function darkMode() {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+            }
+            
+            // Collapsible stuff 
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+        
+                coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } 
+                else {
+                    content.style.display = "block";
+                }
+            });
+            }
+        
+        </script>
+    </body>
+</html>
